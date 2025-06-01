@@ -26,10 +26,15 @@ const store = useTasksStore();
   background: rgba(0, 0, 0, 0.2);
   display: grid;
   place-items: center;
-  color: #000;
+  color: #fff;
 
   .inner {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.1); /* خلفية شفافة شوية */
+    backdrop-filter: blur(10px); /* تأثير الزجاج */
+    -webkit-backdrop-filter: blur(10px); /* دعم Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حواف خفيفة */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 12px;
     display: flex;
@@ -50,7 +55,23 @@ const store = useTasksStore();
       top: 15px;
       right: 15px;
       cursor: pointer;
-      background-color: #fff;
+      background-color: transparent;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-in;
+
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+      &:hover{
+        color: rgb(255, 38, 0);
+      }
     }
 
     .form {

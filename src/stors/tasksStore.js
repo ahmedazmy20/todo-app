@@ -57,7 +57,9 @@ export const useTasksStore = defineStore("tasks", () => {
     if (index !== -1) {
       tasks.splice(index, 1); // Modify the reactive array directly
     }
-    localStorage.setItem("task", JSON.stringify(tasks)); // Update local storage
+    localStorage.setItem("task", JSON.stringify(tasks));
+    // refrech the page
+    window.location.reload();
   }
 
   return {
